@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:sf="http://savvyfaces.org/sf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <h:head>
+        <title>Facelet Title</title>
+        <sf:resources />
+    </h:head>
+    <h:body>
+        <h:form>
+            <sf:inputText value="" placeholder="hellow" autocomplete="off" styleClass="test">
+                <f:ajax render="@form"/>
+            </sf:inputText>
+            <sf:autocomplete autocompleteMethod="#{demoBean.autocomplete}" var="x">
+                <h:outputText value="#{x} an " /> 
+            </sf:autocomplete>
+            -------------
+            <h:inputText value="hellow" autocomplete="off">
+                <f:ajax render="@form" />
+            </h:inputText>
+            <h:commandButton>
+                <f:ajax execute="@form"/>
+            </h:commandButton>
+        </h:form>
+        asd
+
+        <hr/>
+        <hr/>
+        <form>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </input>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 form-control-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    </input>
+                </div>
+            </div>
+        </form>
+        <form>
+            <fieldset class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <small class="text-muted">We'll never share your email with anyone else.</small>
+                </input>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </input>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="exampleSelect1">Example select</label>
+                <select class="form-control" id="exampleSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="exampleSelect2">Example multiple select</label>
+                <select multiple="" class="form-control" id="exampleSelect2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="exampleTextarea">Example textarea</label>
+                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" class="form-control-file" id="exampleInputFile">
+                </input>
+                <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+            </fieldset>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                        Option one is this and that&mdash;be sure to include why it's great
+                    </input>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        Option two can be something else and selecting it will deselect option one
+                    </input>
+                </label>
+            </div>
+            <div class="radio disabled">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+                        Option three is disabled
+                    </input>
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Check me out</input>
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </h:body>
+</html>
+
