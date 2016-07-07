@@ -14,7 +14,17 @@ import javax.faces.context.FacesContext;
 @ApplicationScoped
 @ManagedBean
 public class DemoBean {
+    
+    String value = "testvalue";
 
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+    
     public List<String> getList() {
         return Arrays.asList("123", "23123123", "awedwqeqwe", "asesae", "asdd");
     }
