@@ -16,7 +16,7 @@
             <sf:inputText value="" placeholder="hellow" autocomplete="off" styleClass="test">
                 <f:ajax render="@form"/>
             </sf:inputText>
-            <sf:autocomplete autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x} value" var="x" iterationStatusVar="xy">
+            <sf:autocomplete minChars="3" mode="client" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x} value" var="x" iterationStatusVar="xy">
                 <h:outputText value="#{x} an " /> 
                 #{xy}
             </sf:autocomplete>
