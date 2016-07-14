@@ -16,7 +16,7 @@
             <sf:inputText value="" placeholder="hellow" autocomplete="off" styleClass="test">
                 <f:ajax render="@form"/>
             </sf:inputText>
-            <sf:autocomplete value="#{demoBean.value}" forceSelection="true" minChars="3" clientMatchFunction="SavvyFaces.fn.contains" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x}" var="x" iterationStatusVar="xy">
+            <sf:autocomplete mode="server" minChars="0" value="#{demoBean.value}" forceSelection="true" clientMatchFunction="SavvyFaces.fn.contains" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x}" var="x" iterationStatusVar="xy">
                 <h:outputText value="#{x} an " /> 
                 #{xy}
             </sf:autocomplete>
