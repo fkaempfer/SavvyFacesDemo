@@ -12,13 +12,19 @@
         <sf:resources />
     </h:head>
     <h:body>
+        <div class="form-control">
+
+            <span>asdasdadsakj fls jdlfasjdöfl</span>
+            <span>asdasdadsakj fls jdlfasjdöfl</span>
+            <span>asdasdadsakj fls jdlfasjdöfl</span>
+            <span>asdasdadsakj fls jdlfasjdöfl</span>
+            <input class="sf-autocomplete-input"/>
+        </div>
         <h:form>
             <sf:inputText value="" placeholder="hellow" autocomplete="off" styleClass="test">
                 <f:ajax render="@form"/>
             </sf:inputText>
-            <sf:autocomplete mode="server" minChars="0" value="#{demoBean.value}" forceSelection="true" clientMatchFunction="SavvyFaces.fn.contains" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x}" var="x" iterationStatusVar="xy">
-                <h:outputText value="#{x} an " /> 
-                #{xy}
+            <sf:autocomplete mode="server" multiple="true" minChars="0" value="#{demoBean.value}" forceSelection="true" clientMatchFunction="SavvyFaces.fn.always" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x}" var="x" iterationStatusVar="xy">
             </sf:autocomplete>
             -------------
             <h:inputText value="hellow" autocomplete="off">

@@ -30,7 +30,7 @@ public class DemoBean {
     }
 
     public List<String> autocomplete(String string) {
-        return Arrays.asList("item a", "item b", "item c" , "item d", "item e");
+        return Arrays.asList("item a", "item b", "item c" , "item d", "long long long long long item e");
     }
 
     public void addMessages() {
