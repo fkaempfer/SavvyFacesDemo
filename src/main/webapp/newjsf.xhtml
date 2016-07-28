@@ -12,32 +12,39 @@
         <sf:resources />
     </h:head>
     <h:body>
-        <div class="form-control">
-
-            <span>asdasdadsakj fls jdlfasjdöfl</span>
-            <span>asdasdadsakj fls jdlfasjdöfl</span>
-            <span>asdasdadsakj fls jdlfasjdöfl</span>
-            <span>asdasdadsakj fls jdlfasjdöfl</span>
-            <input class="sf-autocomplete-input"/>
-        </div>
-        <h:form>
-            <sf:inputText value="" placeholder="hellow" autocomplete="off" styleClass="test">
-                <f:ajax render="@form"/>
-            </sf:inputText>
-            <sf:autocomplete mode="server" multiple="true" minChars="0" value="#{demoBean.value}" forceSelection="true" clientMatchFunction="SavvyFaces.fn.always" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x}" var="x" iterationStatusVar="xy">
+        <h:form id="myForm">
+            <sf:autocomplete id="myAutocomplete" mode="server" multiple="true" minChars="0" forceSelection="false" clientMatchFunction="SavvyFaces.fn.always" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x}" var="x" iterationStatusVar="xy" delay="0">
             </sf:autocomplete>
-            -------------
-            <h:inputText value="hellow" autocomplete="off">
-                <f:ajax render="@form" />
-            </h:inputText>
-            <h:commandButton>
-                <f:ajax execute="@form"/>
-            </h:commandButton>
         </h:form>
-        asd
-        <i class="fa fa-neuter"></i>
-        <hr/>
-        <hr/>
+
+        <ui:remove>
+            <div class="form-control">
+
+                <span>asdasdadsakj fls jdlfasjdöfl</span>
+                <span>asdasdadsakj fls jdlfasjdöfl</span>
+                <span>asdasdadsakj fls jdlfasjdöfl</span>
+                <span>asdasdadsakj fls jdlfasjdöfl</span>
+                <input class="sf-autocomplete-input"/>
+            </div>
+            <h:form>
+                <sf:inputText value="" placeholder="hellow" autocomplete="off" styleClass="test">
+                    <f:ajax render="@form"/>
+                </sf:inputText>
+                <sf:autocomplete mode="server" multiple="false" minChars="0" value="#{demoBean.value}" forceSelection="true" clientMatchFunction="SavvyFaces.fn.always" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x}" var="x" iterationStatusVar="xy">
+                </sf:autocomplete>
+                -------------
+                <h:inputText value="hellow" autocomplete="off">
+                    <f:ajax render="@form" />
+                </h:inputText>
+                <h:commandButton>
+                    <f:ajax execute="@form"/>
+                </h:commandButton>
+            </h:form>
+            asd
+            <i class="fa fa-neuter"></i>
+            <hr/>
+            <hr/>
+        </ui:remove>
         <form>
             <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>

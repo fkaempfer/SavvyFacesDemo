@@ -41,4 +41,5 @@ public class DemoBean {
         context.addMessage("myForm:moie", new FacesMessage(FacesMessage.SEVERITY_ERROR, "error message", "error Message"));
         context.addMessage("myForm:textField", new FacesMessage(FacesMessage.SEVERITY_FATAL, "fatal message", "fatal Message"));
     }
+   
 }
