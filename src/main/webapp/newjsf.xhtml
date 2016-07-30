@@ -9,11 +9,11 @@
 
     <h:head>
         <title>Facelet Title</title>
-        <sf:resources />
+        <sf:resources developmentResources="packed" />
     </h:head>
     <h:body>
         <h:form id="myForm">
-            <sf:autocomplete id="myAutocomplete" mode="server" multiple="true" minChars="0" forceSelection="false" clientMatchFunction="SavvyFaces.fn.always" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x}" var="x" iterationStatusVar="xy" delay="0">
+            <sf:autocomplete extraOptions="{onItemAdd: function(a,b){alert(a)}}" id="myAutocomplete" orderable="true"  removeButton="true" restoreOnBackspace="true" mode="server" multiple="true" minChars="3" forceSelection="false" clientMatchFunction="SavvyFaces.fn.always" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x}" var="x" iterationStatusVar="xy" delay="0">
             </sf:autocomplete>
         </h:form>
 
