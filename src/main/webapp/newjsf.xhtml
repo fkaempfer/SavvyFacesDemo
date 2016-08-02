@@ -9,12 +9,34 @@
 
     <h:head>
         <title>Facelet Title</title>
-        <sf:resources developmentResources="packed" />
+        <sf:resources  />
     </h:head>
     <h:body>
         <h:form id="myForm">
-            <sf:autocomplete extraOptions="{onItemAdd: function(a,b){alert(a)}}" id="myAutocomplete" orderable="true"  removeButton="true" restoreOnBackspace="true" mode="server" multiple="true" minChars="3" forceSelection="false" clientMatchFunction="SavvyFaces.fn.always" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x}" var="x" iterationStatusVar="xy" delay="0">
-            </sf:autocomplete>
+            <sf:formLayout formLayout="grid">
+                <sf:autocomplete  label="Hello!"  id="myAutocomplete" orderable="true"  removeButton="true" restoreOnBackspace="true" mode="server" multiple="true" minChars="3" forceSelection="true" clientMatchFunction="SavvyFaces.fn.always" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x}" var="x" iterationStatusVar="xy" delay="0">
+                    
+                </sf:autocomplete>
+                <h:outputText value='helloworld'>
+                    <f:attribute name="required" value="true"/>
+                    <f:attribute name="label" value="asdasd"/>
+                </h:outputText>
+                <h:inputTextarea label='helo2'/>
+                <sf:formGroup control="test3">
+                     <h:inputText label='helo' styleClass="form-control" required="true" requiredMessage="testreqmsg"/>
+               
+                     <br/>
+                     <br/>
+                    <sf:inputText id="test3" label="SF Input" required="true">
+                        <f:validateRequired/>
+                    </sf:inputText>
+                    
+                </sf:formGroup>
+                <h:selectBooleanCheckbox value="asd" label='helo'/>
+            </sf:formLayout>
+            <h:commandButton value="test">
+                <f:ajax execute="@form" render="@form"/>
+            </h:commandButton>
         </h:form>
 
         <ui:remove>
