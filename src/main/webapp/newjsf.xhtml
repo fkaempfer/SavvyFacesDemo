@@ -13,9 +13,35 @@
     </h:head>
     <h:body>
         <h:form id="myForm">
+            <h:commandLink value="TEST" id="hw"/>
+            <h:commandLink value="TEST" id="hw2">
+                <f:ajax/>
+            </h:commandLink>
+            <sf:tabPanel>
+                <f:ajax event="tabChange" execute="@form"/>
+                <sf:tab value="FIRST">
+                    <f:facet name="tabHeader">
+                        <b>THIS IS A HEADER</b>
+                    </f:facet>
+                    ABC 1
+                </sf:tab>
+
+                <ui:repeat value="#{demoBean.list}" var="x">
+
+                    <sf:tab value="#{x}">
+                        #{x}
+                        <h:inputText/>
+                        <h:inputText/>
+                        <h:inputText/>
+                        <sf:autocomplete  label="Hello!"  id="myAutocomplete" orderable="true"  removeButton="true" restoreOnBackspace="true" mode="server" multiple="true" minChars="3" forceSelection="true" clientMatchFunction="SavvyFaces.fn.always" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x}" var="x" iterationStatusVar="xy" delay="0">
+
+                        </sf:autocomplete>
+                    </sf:tab>
+                </ui:repeat>
+            </sf:tabPanel>
             <sf:formLayout formLayout="grid">
                 <sf:autocomplete  label="Hello!"  id="myAutocomplete" orderable="true"  removeButton="true" restoreOnBackspace="true" mode="server" multiple="true" minChars="3" forceSelection="true" clientMatchFunction="SavvyFaces.fn.always" autocompleteMethod="#{demoBean.autocomplete}" autocompleteValue="#{x}" var="x" iterationStatusVar="xy" delay="0">
-                    
+
                 </sf:autocomplete>
                 <h:outputText value='helloworld'>
                     <f:attribute name="required" value="true"/>
@@ -23,14 +49,14 @@
                 </h:outputText>
                 <h:inputTextarea label='helo2'/>
                 <sf:formGroup control="test3">
-                     <h:inputText label='helo' styleClass="form-control" required="true" requiredMessage="testreqmsg"/>
-               
-                     <br/>
-                     <br/>
+                    <h:inputText label='helo' styleClass="form-control" required="true" requiredMessage="testreqmsg"/>
+
+                    <br/>
+                    <br/>
                     <sf:inputText id="test3" label="SF Input" required="true">
                         <f:validateRequired/>
                     </sf:inputText>
-                    
+
                 </sf:formGroup>
                 <h:selectBooleanCheckbox value="asd" label='helo'/>
             </sf:formLayout>
